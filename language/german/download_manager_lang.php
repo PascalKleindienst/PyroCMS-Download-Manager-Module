@@ -3,9 +3,9 @@
  * Download Manager Language File - GERMAN
  *
  * @package		PyroCMS
- * @subpackage	Modules
+ * @subpackage 	Modules
  * @author		Pascal Kleindienst
- * @copyright	Copyright (c) 2013, Pascal Kleindienst
+ * @copyright 	Copyright (c) 2013, Pascal Kleindienst
  * @link		http://www.pascalkleindienst.de
  * @license		LGPLv3
  */
@@ -34,4 +34,7 @@ $lang['dm_admin.login_all'] 		= 'Jeder';
 $lang['dm_admin.login_register'] 	= 'Login erforderlich';
 $lang['dm_admin.file'] 				= 'Datei';
 $lang['dm_admin.url'] 				= 'URL';
-$lang['dm_admin.current_file'] = 'Aktuelle Datei:';
+$lang['dm_admin.current_file'] 		= 'Aktuelle Datei:';
+
+// plugin
+$lang['dm_plugin.file_not_found']	= 'Datei nicht mehr vorhanden';

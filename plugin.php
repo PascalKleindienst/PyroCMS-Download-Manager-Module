@@ -3,9 +3,9 @@
  * Download Manager Plugin
  *
  * @package		PyroCMS
- * @subpackage	Modules
+ * @subpackage 	Modules
  * @author		Pascal Kleindienst
- * @copyright	Copyright (c) 2013, Pascal Kleindienst
+ * @copyright 	Copyright (c) 2013, Pascal Kleindienst
  * @link		http://www.pascalkleindienst.de
  * @license		LGPLv3
  */
@@ -30,7 +30,13 @@ class Plugin_Download_Manager extends Plugin
      	// get the file by the slug
         $this->load->model('download_manager_m');   
         $file 	= $this->download_manager_m->get_by_slug($slug);
-        $class .= ($file->type == Download_Manager_m::$TYPE['EXTERNAL']) ? ' external' : '';
+        
+        if($file === FALSE) {
+        	$this->load->language('download_manager');
+			return lang('dm_plugin.file_not_found');
+        }
+        
+		$class .= ($file->type == Download_Manager_m::$TYPE['EXTERNAL']) ? ' external' : '';
         
         // create the anchor tag
         $string = anchor(

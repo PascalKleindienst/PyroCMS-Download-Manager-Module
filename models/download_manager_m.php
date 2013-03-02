@@ -70,7 +70,7 @@ class Download_Manager_m extends MY_Model
 	 * @param int $id - ID of the download file
 	 * @return mixed $file
 	 */
-	public function get(int $id)
+	public function get($id)
 	{
 		$file = parent::get($id);
 		
@@ -92,9 +92,13 @@ class Download_Manager_m extends MY_Model
 	 * @param string $slug - The slug of the download file
 	 * @return mixed $file
 	 */
-	public function get_by_slug(string $slug)
+	public function get_by_slug($slug)
 	{
 		$file = $this->db->get_where($this->_table, array('slug' => $slug), 1)->row();
+		
+		// File does not exits
+		if(empty($file))
+			return false;
 		
 		if($file->type == self::$TYPE['LOCAL'])
 		{
@@ -124,7 +128,7 @@ class Download_Manager_m extends MY_Model
 	 * @access public
 	 * @param string $slug - The slug of the file
 	 */
-	public function download(string $slug)
+	public function download($slug)
 	{
 		$file = $this->get_by_slug($slug);
 		
@@ -169,7 +173,7 @@ class Download_Manager_m extends MY_Model
 	 * @param int $id - File download id
 	 * @return bool
 	 */
-	protected function increase_download(int $id)
+	protected function increase_download($id)
 	{
 		if($this->is_bot())
 			return false;

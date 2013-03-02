@@ -35,3 +35,6 @@ $lang['dm_admin.login_register']	= 'Login required';
 $lang['dm_admin.file'] 				= 'File';
 $lang['dm_admin.url'] 				= 'URL';
 $lang['dm_admin.current_file'] 		= 'Current File';
+
+// plugin
+$lang['dm_plugin.file_not_found']	= 'File not found';
