@@ -63,6 +63,9 @@ class Plugin_Download_Manager extends Plugin
     	$slug = $this->attribute('slug'); 
         $file = $this->download_manager_m->get_by_slug($slug);
         
+        if($file === FALSE)
+        	return array(array());
+        
         $file = array(
 			array(
 				'name' 		=> $file->name,
